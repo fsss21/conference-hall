@@ -43,26 +43,26 @@ function PhotoGallery({ photos }) {
     setIsFullscreen(false)
   }
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Escape') {
-      if (isFullscreen) {
-        setIsFullscreen(false)
-      }
-    } else if (e.key === 'ArrowLeft') {
-      handlePrev()
-    } else if (e.key === 'ArrowRight') {
-      handleNext()
-    }
-  }
-
   useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!isFullscreen) return
+      
+      if (e.key === 'Escape') {
+        setIsFullscreen(false)
+      } else if (e.key === 'ArrowLeft') {
+        setCurrentIndex((prev) => (prev > 0 ? prev - 1 : totalPhotos - 1))
+      } else if (e.key === 'ArrowRight') {
+        setCurrentIndex((prev) => (prev < totalPhotos - 1 ? prev + 1 : 0))
+      }
+    }
+
     if (isFullscreen) {
       window.addEventListener('keydown', handleKeyDown)
       return () => {
         window.removeEventListener('keydown', handleKeyDown)
       }
     }
-  }, [isFullscreen, currentIndex, totalPhotos])
+  }, [isFullscreen, totalPhotos])
 
   return (
     <>

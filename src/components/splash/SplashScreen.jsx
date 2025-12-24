@@ -6,12 +6,10 @@ function SplashScreen({ onComplete }) {
   const [isAnimating, setIsAnimating] = useState(true)
 
   useEffect(() => {
-    // Показываем кнопку пропустить через 2 секунды, если анимация еще идет
     const skipTimer = setTimeout(() => {
       setShowSkip(true)
     }, 2000)
 
-    // Автоматический переход через 5 секунд
     const autoTimer = setTimeout(() => {
       handleSkip()
     }, 5000)
@@ -20,6 +18,7 @@ function SplashScreen({ onComplete }) {
       clearTimeout(skipTimer)
       clearTimeout(autoTimer)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleSkip = () => {
@@ -39,8 +38,8 @@ function SplashScreen({ onComplete }) {
           <p>Музейный комплекс</p>
         </div>
         {showSkip && (
-          <button className={styles.skipButton} onClick={handleSkip}>
-            Пропустить
+            <button className={styles.skipButton} onClick={handleSkip}>
+            ПРОПУСТИТЬ
           </button>
         )}
       </div>

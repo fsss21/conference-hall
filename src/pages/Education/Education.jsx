@@ -15,10 +15,14 @@ function Education() {
       try {
         setLoading(true)
         const response = await fetch('/data/education.json')
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+        }
         const data = await response.json()
         setEducationData(data)
       } catch (error) {
         console.error('Error loading education data:', error)
+        setEducationData(null)
       } finally {
         setLoading(false)
       }

@@ -24,15 +24,24 @@ function ScientificActivity() {
           fetch('/data/conferences.json')
         ])
 
-        const research = await researchRes.json()
-        const publications = await publicationsRes.json()
-        const conferences = await conferencesRes.json()
+        if (!researchRes.ok || !publicationsRes.ok || !conferencesRes.ok) {
+          throw new Error('Failed to load some data files')
+        }
 
-        setResearchList(research)
-        setPublicationsList(publications)
-        setConferencesList(conferences)
+        const [research, publications, conferences] = await Promise.all([
+          researchRes.json(),
+          publicationsRes.json(),
+          conferencesRes.json()
+        ])
+
+        setResearchList(Array.isArray(research) ? research : [])
+        setPublicationsList(Array.isArray(publications) ? publications : [])
+        setConferencesList(Array.isArray(conferences) ? conferences : [])
       } catch (error) {
         console.error('Error loading data:', error)
+        setResearchList([])
+        setPublicationsList([])
+        setConferencesList([])
       } finally {
         setLoading(false)
       }

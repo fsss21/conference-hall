@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import MenuButtons from '../../components/common/MenuButtons'
 import PhotoGallery from '../../components/gallery/PhotoGallery'
 import styles from './MuseumHistory.module.css'
 
 function MuseumHistory() {
-  const navigate = useNavigate()
   const [historyData, setHistoryData] = useState(null)
   const [loading, setLoading] = useState(true)
 
@@ -14,10 +12,14 @@ function MuseumHistory() {
       try {
         setLoading(true)
         const response = await fetch('/data/museum-history.json')
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+        }
         const data = await response.json()
         setHistoryData(data)
       } catch (error) {
         console.error('Error loading museum history data:', error)
+        setHistoryData(null)
       } finally {
         setLoading(false)
       }
@@ -31,7 +33,7 @@ function MuseumHistory() {
       <MenuButtons />
       <div className={styles.content}>
         {loading ? (
-          <div className={styles.loading}>Загрузка...</div>
+          <div className={styles.loading}>ЗАГРУЗКА...</div>
         ) : historyData ? (
           <>
             <div className={styles.textContent}>
@@ -47,7 +49,7 @@ function MuseumHistory() {
             )}
           </>
         ) : (
-          <div className={styles.error}>Не удалось загрузить данные</div>
+          <div className={styles.error}>НЕ УДАЛОСЬ ЗАГРУЗИТЬ ДАННЫЕ</div>
         )}
       </div>
     </div>

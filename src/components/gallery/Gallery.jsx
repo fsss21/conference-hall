@@ -9,25 +9,28 @@ function Gallery({ category }) {
   const [loading, setLoading] = useState(true)
   const itemsPerPage = 9
 
-  // Загружаем данные из JSON файла
   useEffect(() => {
     const loadData = async () => {
       try {
         setLoading(true)
+        setCurrentPage(0) // Сбрасываем страницу при смене категории
         const response = await fetch(`/data/${category}.json`)
         if (!response.ok) {
-          throw new Error('Failed to load data')
+          throw new Error(`HTTP error! status: ${response.status}`)
         }
         const data = await response.json()
         setExhibitsData(data)
       } catch (error) {
         console.error('Error loading exhibits data:', error)
+        setExhibitsData(null)
       } finally {
         setLoading(false)
       }
     }
 
-    loadData()
+    if (category) {
+      loadData()
+    }
   }, [category])
 
   if (loading || !exhibitsData) {
@@ -43,7 +46,7 @@ function Gallery({ category }) {
         </div>
         <div className={styles.galleryNavigation} style={{ opacity: 0.3 }}>
           <div className={styles.navArrow} style={{ pointerEvents: 'none' }}>←</div>
-          <div className={styles.pageIndicator}>Загрузка...</div>
+          <div className={styles.pageIndicator}>ЗАГРУЗКА...</div>
           <div className={styles.navArrow} style={{ pointerEvents: 'none' }}>→</div>
         </div>
       </div>
@@ -79,15 +82,15 @@ function Gallery({ category }) {
     <>
       <div className={styles.gallery}>
         <div className={styles.galleryGrid}>
-          {currentExhibits.map((exhibit, index) => (
+          {currentExhibits.map((exhibit) => (
             <div 
               key={exhibit.id} 
               className={styles.galleryItem}
               onClick={() => handleExhibitClick(exhibit)}
             >
               <img 
-                src={exhibit.images[0]} 
-                alt={exhibit.name}
+                src={exhibit.images?.[0] || ''} 
+                alt={exhibit.name || 'Экспонат'}
                 loading="lazy"
               />
               <p className={styles.galleryItemTitle}>{exhibit.name}</p>
@@ -130,17 +133,11 @@ function Gallery({ category }) {
 
 // Функция для получения всех экспонатов из всех подкатегорий
 function getAllExhibits(exhibitsData) {
-  if (!exhibitsData) return []
+  if (!exhibitsData || typeof exhibitsData !== 'object') return []
   
-  // Собираем все экспонаты из всех подкатегорий в один массив
-  const allExhibits = []
-  Object.keys(exhibitsData).forEach(key => {
-    if (Array.isArray(exhibitsData[key])) {
-      allExhibits.push(...exhibitsData[key])
-    }
-  })
-  
-  return allExhibits
+  return Object.values(exhibitsData)
+    .filter(Array.isArray)
+    .flat()
 }
 
 export default Gallery

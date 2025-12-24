@@ -43,26 +43,26 @@ function ExhibitModal({ exhibit, onClose }) {
     setIsFullscreen(false)
   }
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Escape') {
-      if (isFullscreen) {
-        setIsFullscreen(false)
-      } else {
-        onClose()
-      }
-    } else if (e.key === 'ArrowLeft') {
-      handlePrevImage(e)
-    } else if (e.key === 'ArrowRight') {
-      handleNextImage(e)
-    }
-  }
-
   useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        if (isFullscreen) {
+          setIsFullscreen(false)
+        } else {
+          onClose()
+        }
+      } else if (e.key === 'ArrowLeft') {
+        setCurrentImageIndex((prev) => (prev > 0 ? prev - 1 : totalImages - 1))
+      } else if (e.key === 'ArrowRight') {
+        setCurrentImageIndex((prev) => (prev < totalImages - 1 ? prev + 1 : 0))
+      }
+    }
+
     window.addEventListener('keydown', handleKeyDown)
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [isFullscreen, totalImages])
+  }, [isFullscreen, totalImages, onClose])
 
   return (
     <>

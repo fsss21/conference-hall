@@ -13,17 +13,27 @@ function ResearchDetail() {
       try {
         setLoading(true)
         const response = await fetch('/data/research.json')
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+        }
         const data = await response.json()
-        const found = data.find(item => item.id === parseInt(id))
-        setResearch(found)
+        const researchId = parseInt(id, 10)
+        if (isNaN(researchId)) {
+          throw new Error('Invalid research ID')
+        }
+        const found = data.find(item => item.id === researchId)
+        setResearch(found || null)
       } catch (error) {
         console.error('Error loading research:', error)
+        setResearch(null)
       } finally {
         setLoading(false)
       }
     }
 
-    loadResearch()
+    if (id) {
+      loadResearch()
+    }
   }, [id])
 
   if (loading) {
@@ -31,7 +41,7 @@ function ResearchDetail() {
       <div className={styles.researchDetailPage}>
         <MenuButtons />
         <div className={styles.content}>
-          <div className={styles.loading}>Загрузка...</div>
+          <div className={styles.loading}>ЗАГРУЗКА...</div>
         </div>
       </div>
     )
@@ -42,7 +52,7 @@ function ResearchDetail() {
       <div className={styles.researchDetailPage}>
         <MenuButtons />
         <div className={styles.content}>
-          <h1 className={styles.pageTitle}>Исследование не найдено</h1>
+          <h1 className={styles.pageTitle}>ИССЛЕДОВАНИЕ НЕ НАЙДЕНО</h1>
         </div>
       </div>
     )
