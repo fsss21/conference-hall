@@ -1,0 +1,60 @@
+[
+  {
+    "id": 1,
+    "title": "Международная конференция по археологии",
+    "date": "2024",
+    "videos": [
+      {
+        "id": 1,
+        "title": "Доклад: Новые находки в археологии",
+        "url": "https://example.com/video1.mp4",
+        "thumbnail": "/images/conference1-video1.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Доклад: Методы датирования артефактов",
+        "url": "https://example.com/video2.mp4",
+        "thumbnail": "/images/conference1-video2.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Круглый стол: Проблемы сохранения наследия",
+        "url": "https://example.com/video3.mp4",
+        "thumbnail": "/images/conference1-video3.jpg"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Конференция по истории и культуре",
+    "date": "2023",
+    "videos": [
+      {
+        "id": 1,
+        "title": "История музейного комплекса",
+        "url": "https://example.com/video4.mp4",
+        "thumbnail": "/images/conference2-video1.jpg"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Научный форум по реставрации",
+    "date": "2024",
+    "videos": [
+      {
+        "id": 1,
+        "title": "Современные технологии реставрации",
+        "url": "https://example.com/video5.mp4",
+        "thumbnail": "/images/conference3-video1.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Мастер-класс по консервации",
+        "url": "https://example.com/video6.mp4",
+        "thumbnail": "/images/conference3-video2.jpg"
+      }
+    ]
+  }
+]
+

@@ -1,0 +1,157 @@
+{
+  "lectures": [
+    {
+      "id": 1,
+      "title": "Лекция: История археологических находок",
+      "type": "video",
+      "url": "https://example.com/lecture1.mp4",
+      "thumbnail": "/images/lecture1.jpg",
+      "duration": "45:30"
+    },
+    {
+      "id": 2,
+      "title": "Лекция: Культура и быт XVIII века",
+      "type": "audio",
+      "url": "https://example.com/lecture2.mp3",
+      "thumbnail": "/images/lecture2.jpg",
+      "duration": "38:15"
+    },
+    {
+      "id": 3,
+      "title": "Лекция: Реставрация как искусство",
+      "type": "video",
+      "url": "https://example.com/lecture3.mp4",
+      "thumbnail": "/images/lecture3.jpg",
+      "duration": "52:20"
+    },
+    {
+      "id": 4,
+      "title": "Лекция: Этнография региона",
+      "type": "video",
+      "url": "https://example.com/lecture4.mp4",
+      "thumbnail": "/images/lecture4.jpg",
+      "duration": "40:10"
+    },
+    {
+      "id": 5,
+      "title": "Лекция: Древние технологии производства",
+      "type": "audio",
+      "url": "https://example.com/lecture5.mp3",
+      "thumbnail": "/images/lecture5.jpg",
+      "duration": "35:45"
+    },
+    {
+      "id": 6,
+      "title": "Лекция: Цифровые технологии в музее",
+      "type": "video",
+      "url": "https://example.com/lecture6.mp4",
+      "thumbnail": "/images/lecture6.jpg",
+      "duration": "48:30"
+    },
+    {
+      "id": 7,
+      "title": "Лекция: Консервация музейных ценностей",
+      "type": "video",
+      "url": "https://example.com/lecture7.mp4",
+      "thumbnail": "/images/lecture7.jpg",
+      "duration": "43:20"
+    }
+  ],
+  "excursions": [
+    {
+      "id": 1,
+      "title": "Виртуальная экскурсия: Зал керамики",
+      "type": "video",
+      "url": "https://example.com/excursion1.mp4",
+      "thumbnail": "/images/excursion1.jpg",
+      "duration": "25:10"
+    },
+    {
+      "id": 2,
+      "title": "Аудио-экскурсия: История экспонатов",
+      "type": "audio",
+      "url": "https://example.com/excursion2.mp3",
+      "thumbnail": "/images/excursion2.jpg",
+      "duration": "30:45"
+    },
+    {
+      "id": 3,
+      "title": "Экскурсия: Металлические изделия",
+      "type": "video",
+      "url": "https://example.com/excursion3.mp4",
+      "thumbnail": "/images/excursion3.jpg",
+      "duration": "28:30"
+    },
+    {
+      "id": 4,
+      "title": "Экскурсия: Зал этнографии",
+      "type": "video",
+      "url": "https://example.com/excursion4.mp4",
+      "thumbnail": "/images/excursion4.jpg",
+      "duration": "32:15"
+    },
+    {
+      "id": 5,
+      "title": "Аудио-экскурсия: Архитектура музейного комплекса",
+      "type": "audio",
+      "url": "https://example.com/excursion5.mp3",
+      "thumbnail": "/images/excursion5.jpg",
+      "duration": "27:40"
+    },
+    {
+      "id": 6,
+      "title": "Экскурсия: Исторические документы",
+      "type": "video",
+      "url": "https://example.com/excursion6.mp4",
+      "thumbnail": "/images/excursion6.jpg",
+      "duration": "29:20"
+    },
+    {
+      "id": 7,
+      "title": "Экскурсия: Реставрационные мастерские",
+      "type": "video",
+      "url": "https://example.com/excursion7.mp4",
+      "thumbnail": "/images/excursion7.jpg",
+      "duration": "35:50"
+    },
+    {
+      "id": 8,
+      "title": "Аудио-экскурсия: Культурное наследие региона",
+      "type": "audio",
+      "url": "https://example.com/excursion8.mp3",
+      "thumbnail": "/images/excursion8.jpg",
+      "duration": "31:25"
+    }
+  ],
+  "masterclasses": [
+    {
+      "id": 1,
+      "title": "Мастер-класс: Изготовление керамики",
+      "url": "https://example.com/masterclass1.mp4",
+      "thumbnail": "/images/masterclass1.jpg",
+      "duration": "60:00"
+    },
+    {
+      "id": 2,
+      "title": "Мастер-класс: Реставрация документов",
+      "url": "https://example.com/masterclass2.mp4",
+      "thumbnail": "/images/masterclass2.jpg",
+      "duration": "45:30"
+    },
+    {
+      "id": 3,
+      "title": "Мастер-класс: Работа с металлом",
+      "url": "https://example.com/masterclass3.mp4",
+      "thumbnail": "/images/masterclass3.jpg",
+      "duration": "50:15"
+    },
+    {
+      "id": 4,
+      "title": "Мастер-класс: Консервация артефактов",
+      "url": "https://example.com/masterclass4.mp4",
+      "thumbnail": "/images/masterclass4.jpg",
+      "duration": "55:20"
+    }
+  ]
+}
+

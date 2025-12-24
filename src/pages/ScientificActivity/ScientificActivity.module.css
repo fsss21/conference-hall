@@ -1,0 +1,493 @@
+.scientificActivityPage {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-width: 0;
+}
+
+.pageTitle {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin: 0 0 2rem 0;
+}
+
+.mainLayout {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 2rem;
+  min-height: 0;
+}
+
+.rightPanel {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tabButton {
+  flex: 1;
+  min-width: 150px;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.tabButton:hover {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  filter: brightness(1.1);
+}
+
+.tabButton.active {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+.researchContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 2rem;
+  overflow-y: auto;
+}
+
+.researchGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.researchCard {
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e9ecef;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.researchCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  border-color: #667eea;
+}
+
+.researchCard:active {
+  transform: translateY(0);
+}
+
+.researchCardInfo {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.researchCardTitle {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.researchCardDescription {
+  margin: 0;
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.researchCardDate {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #667eea;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  align-self: flex-start;
+}
+
+.tabContent {
+  padding: 1rem;
+  color: #666;
+}
+
+.loading {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.publicationsContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 2rem;
+  overflow-y: auto;
+}
+
+.publicationsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.publicationCard {
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.publicationCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.publicationCardLink {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.publicationCardLink:hover {
+  background: #e9ecef;
+}
+
+.publicationCardContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.publicationCardImageWrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #e9ecef;
+}
+
+.publicationCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.publicationCardInfo {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.publicationCardTitle {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.publicationCardAuthors {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.publicationCardText {
+  margin: 0;
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.publicationCardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  gap: 1rem;
+}
+
+.publicationCardDate {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #667eea;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.linkIcon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.conferencesContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 2rem;
+  overflow-y: auto;
+}
+
+.videosGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.videoCard {
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.videoCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  background: #000;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.videoCardInfo {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.videoCardTitle {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.videoCardConference {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.videoCardDate {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #667eea;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.itemsNavigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.videosNavigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.itemsNavButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.itemsNavButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.itemsNavButton:active {
+  transform: scale(0.95);
+}
+
+.itemsCounter {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 1.1rem;
+  min-width: 80px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.videosNavButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.videosNavButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.videosNavButton:active {
+  transform: scale(0.95);
+}
+
+.videosCounter {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 1.1rem;
+  min-width: 80px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.emptyState {
+  padding: 3rem;
+  text-align: center;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.emptyState p {
+  color: #666;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+  .researchGrid,
+  .publicationsGrid,
+  .videosGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .researchGrid,
+  .publicationsGrid,
+  .videosGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1200px) {
+  .mainLayout {
+    flex-direction: column;
+  }
+
+  .rightPanel {
+    width: 100%;
+  }
+}
+
